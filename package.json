@@ -1,0 +1,16 @@
+{
+  "name": "my-gulp-ftp",
+  "version": "1.0.0",
+  "description": "Via watch + ftp upload doen naar dev server",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "stees",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-rename": "^1.4.0",
+    "gulp-sftp": "git+https://git@github.com/webksde/gulp-sftp.git"
+  }
+}

@@ -1,0 +1,44 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Attach Chrome web.server.host.name",
+            "type": "chrome",
+            "request": "attach",
+            "port": 9222,
+            "url": "https://web.server.host.name/apex/f?p=1:*",
+            "webRoot": "${workspaceFolder}/src",
+            "pathMapping": { "/a/themes": "${workspaceFolder/src/themes}" }
+        },
+        {
+            "name": "Launch Chrome web.server.host.name",
+            "type": "chrome",
+            "request": "launch",
+            "url": "https://web.server.host.name/apex/f?p=1:1",
+            "webRoot": "${workspaceFolder}/src",
+            "pathMapping": { "/a/themes": "${workspaceFolder/src/themes}" }
+        },
+        {
+            "name": "Attach Firefox web.server.host.name",
+            "type": "firefox",
+            "request": "attach",
+            "reAttach": true,
+            "port": 9222,
+            "url": "https://web.server.host.name/apex/f?p=1:*",
+            "webRoot": "${workspaceFolder}/src",
+            "pathMapping": { "/a/themes": "${workspaceFolder/src/themes}" }
+        },
+        {
+            "name": "Launch Firefox web.server.host.name",
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "url": "https://web.server.host.name/apex/f?p=1:1",
+            "webRoot": "${workspaceFolder}/src",
+            "pathMapping": { "/a/themes": "${workspaceFolder/src/themes}" }
+        }
+    ]
+}
