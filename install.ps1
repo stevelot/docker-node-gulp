@@ -17,6 +17,14 @@ if($len -eq 0){
   $CredFtpDev | Export-CliXml -Path $CredPath
 }
 
+$len = ((Import-CliXml -Path $CredPath).GetNetworkCredential().Password).Length
+if($len -eq 0){
+  Write-Output "Fout, wachtwoord leeg, dit is nodig dus probeer opnieuw..."
+  Remove-Item $CredPath -Force --quiet
+  exit
+}
+
+
 
 Write-Output "Docker builden (lokaal)"
 Write-Output $(docker image ls -f reference=node --format "{{.Repository}}")
@@ -24,8 +32,5 @@ Write-Output $(docker image ls -f reference=node --format "{{.Repository}}")
 $jn = Read-Host -Prompt "Docker opnieuw bouwen (j / leeg)?"
 if($jn -eq 'j' -or $jn -eq 'J'){
   #Opnieuw builden:
-  $len = 0
-}
-if($len -eq 0){
   docker build -t my-gulp-ftp .
 }

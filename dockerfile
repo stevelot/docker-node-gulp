@@ -2,10 +2,14 @@
 FROM node:latest 
                  #AS my-gulp-ftp
 WORKDIR /_/prj
+RUN apt-get update \
+ && apt-get install -y bash
+EXPOSE 8080 8081
 COPY package.json ./
 RUN npm install -g gulp gulp-cli \
  && npm install
 ENTRYPOINT ["./start.sh"]
+# ENTRYPOINT ["./start.sh"]
 #ENTRYPOINT ["/bin/bash"]
 #ENTRYPOINT ["gulp"]
 
